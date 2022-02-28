@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #cce3de;
+    --header-footer-color: royalblue;
+    --remaining-time-color: royalblue;
+    --typing-text-color: #cce3de;
+    --cursor-color: #111111;
+    --correct-text-color: #5eff00
+}
+
+.dark-mode {
+    --bg-color: #111111;
+    --header-footer-color: #222222;
+    --remaining-time-color: #cce3de;
+    --cursor-color: #3F57D2;
+    --correct-text-color: rgb(0 255 129);
+}
+
+body {
+    background-color: var(--bg-color);
+    transition: background 0.2s linear;
+}
+
+/* HEADER */
+.menu {
+    height: 110px;
+    width: 100%;
+    background-color: var(--header-footer-color);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+ul{
+    display: flex;
+}
+li{
+    list-style: none;
+}
+
+.mainbutton {
+    font-weight: bold;
+    color: white;
+    background-color: var(--header-footer-color);
+    font-size: 30px;
+    margin: 30px;
+    border: none;
+    font-family: "Arial Black";
+}
+
+.name1 {
+    margin: 24px;
+    background-color: var(--header-footer-color);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: Calibri;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+.name {
+    margin: 24px;
+    background-color: var(--header-footer-color);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: Calibri;
+    cursor: pointer;
+}
+
+.mainbutton:visited,
+.mainbutton:link {
+    text-decoration: none;
+}
+
+.mainbutton:hover,
+.mainbutton:active {
+    text-decoration: underline;
+}
+
+.name1:visited,
+.mainbutton:link {
+    text-decoration: none;
+}
+
+.name1:hover,
+.mainbutton:active {
+    text-decoration: underline;
+}
+
+.name:visited,
+.mainbutton:link {
+    text-decoration: none;
+}
+
+.name:hover,
+.mainbutton:active {
+    text-decoration: underline;
+}
+
+.image1 img {
+    height: 70px;
+    width: 70px;
+    margin-left: 150px;
+}
+
+/*     HEADER      END */
+
+/*             CONTENT               */
+.content {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 50%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    margin-top: 70px;
+}
+
+.text-for-typing {
+    margin: 0 auto;
+    width: 500px;
+    height: 150px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--typing-text-color);
+}
+
+.typing-race {
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 2px solid #a5aaac;
+    border-radius: 20px;
+    background-color: var(--header-footer-color);
+}
+
+.correct {
+    color: var(--correct-text-color)
+}
+
+.incorrect {
+    -webkit-animation: incorrect 1s linear infinite;
+    animation: incorrect 1s linear infinite;
+}
+
+@-webkit-keyframes incorrect {
+    100% {
+        background-color: #D08383
+    }
+}
+
+@keyframes incorrect {
+    100% {
+        background-color: #D08383
+    }
+}
+
+.cursor {
+
+    background-color: var(--cursor-color);
+}
+
+.noselect {
+    /* To prohibit copying */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -khtml-user-select: none;
+}
+
+#remaining-time {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--remaining-time-color);
+    width: 500px;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px 0;
+    font-weight: bold;
+}
+
+.my-bar{
+    width: 100%;
+    height: 20px;
+    background: #3b3b3b;
+    box-shadow: 2px 14px 15px -7px rgba(30, 166, 250, 0.36);
+    border-radius: 50px;
+}
+
+.my-progress{
+    width:0%;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #03bcf6;
+    color: white;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: width 300ms linear;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
+    margin-top: 16px;
+    border-top: 1px solid #ccc;
+}
+
+.wpm,
+.wps {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #cce3de;
+    font-weight: bold;
+}
+
+.try-again {
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 105px;
+    background-color: #03bcf6;
+    padding: 8px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3 ease;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.try-again:active {
+    transform: scale(1.12);
+}
+
+.try-again:hover {
+    color: #005894;
+    text-decoration: underline;
+    background-color: #00b4d8;
+}
+
+/*           CONTENT   END      */
+
+/*           FOOTER     START        */
+.footer {
+    height: 110px;
+    background-color: var(--header-footer-color);
+    padding: 2em 0;
+}
+
+.footer-p {
+    color: white;
+    position: absolute;
+    left: 120px;
+    padding-top: 10px;
+}
+
+.footer-menu {
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid white;
+    padding-left: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.footer-menu a:last-child {
+    border-right: none;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+}
+
+.btn-left {
+    background-color: #03bcf6;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3 ease;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.btn-left:hover {
+    color: #005894;
+    text-decoration: underline;
+    background-color: #00b4d8;
+}
+
+.btn-left:active {
+    transform: scale(1.12);
+}
+
+/*           FOOTER    END      */
